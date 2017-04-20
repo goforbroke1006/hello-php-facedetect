@@ -9,18 +9,10 @@
 $signaturesDir = '/usr/local/share/OpenCV/haarcascades';
 
 $filename = __DIR__ . '/party.jpg';
-echo $filename . '<br/>';
-
 $signature = $signaturesDir . '/haarcascade_frontalface_alt.xml';
 
-echo '<pre>';
-print_r(face_count($filename, $signature));
-echo '</pre>';
-
 $detectionData = face_detect($filename, $signature);
-echo '<pre>';
-print_r($detectionData);
-echo '</pre>';
+echo 'Founded faces: ' . count($detectionData) . '<br/>';
 
 $imageRes = imagecreatefromjpeg($filename);
 foreach ($detectionData as $detection) {
