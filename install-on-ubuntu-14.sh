@@ -40,5 +40,14 @@ mkdir php-facedetect && cd php-facedetect
 git clone https://github.com/infusion/PHP-Facedetect.git ./
 sudo apt-get install -y php5.6-dev
 phpize && ./configure && make && sudo make install
+sudo echo 'extension=/usr/lib/php/20131226/facedetect.so' >> /etc/php/5.6/cli/php.ini
 
-sudo echo '/usr/lib/php/20131226/facedetect.so' >> /etc/php/5.6/cli/php.ini
+
+### ========== OpenCV-for-PHP ==========
+
+cd ~
+rm -rf ./OpenCV-for-PHP
+git clone https://github.com/mgdm/OpenCV-for-PHP.git OpenCV-for-PHP
+cd ./OpenCV-for-PHP
+phpize && ./configure && make && sudo make install
+sudo echo 'extension=/usr/lib/php/20131226/opencv.so' >> /etc/php/5.6/cli/php.ini
