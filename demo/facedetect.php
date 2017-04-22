@@ -66,7 +66,7 @@ function markDetectedAreas($img, $signatureFilename)
 
 $signaturesDir = '/usr/local/share/OpenCV/haarcascades';
 
-$filename = __DIR__ . '/../party.jpg';
+$filename = __DIR__ . '/../sample/' . $_GET['img'];
 $signature = $signaturesDir . '/haarcascade_frontalface_alt.xml';
 $eyeSignature = $signaturesDir . '/haarcascade_eye.xml';
 $lefteyeSignature = $signaturesDir . '/haarcascade_mcs_lefteye.xml';
@@ -91,6 +91,17 @@ $imageRes = imagecreatefromjpeg($filename);
             height: 180px;
         }
     </style>
+
+    <nav>
+        <a href="/">Homepage</a> |
+
+        <a href="?img=party.jpg">Party</a>
+        <a href="?img=party_grayscale.jpg">Party gray-scale</a>
+
+        <?php for ($i = 1; $i <= 9; $i++) { ?>
+            <a href="/demo/facedetect.php?img=<?php echo 'face' . $i . '.jpg' ?>">Face #<?php echo $i ?></a>
+        <?php } ?>
+    </nav>
 
     <span class="table__head">Origin</span>
     <span class="table__head">Eyes</span>
