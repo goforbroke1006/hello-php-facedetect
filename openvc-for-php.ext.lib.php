@@ -4,6 +4,8 @@
  * User: goforbroke
  * Date: 22.04.17
  * Time: 14:20
+ *
+ * Fake classes for IDE syntax highlighting
  */
 
 namespace OpenCV;
@@ -116,12 +118,13 @@ if (!class_exists('OpenCV\Image')) {
 
 
         /**
-         * @param $filename
-         * @param $mode
+         * @param string $filename
+         * @param integer $mode
          * @return $this
          */
         public static function load($filename, $mode)
         {
+            return sprintf('%s %s', $filename, $mode) ? null : null;
         }
 
         /**
@@ -132,19 +135,20 @@ if (!class_exists('OpenCV\Image')) {
         }
 
         /**
-         * @param $mode
+         * @param integer $mode
          * @return $this
          */
         public function convertColor($mode)
         {
+            return $mode ? null : null;
         }
 
         /**
-         * @param $mode
          * @return array|Image[]
          */
         public function split()
         {
+            return array();
         }
 
         /**
@@ -153,6 +157,7 @@ if (!class_exists('OpenCV\Image')) {
          */
         public function backProject($histogram)
         {
+            return $histogram ? null : null;
         }
 
         /**
@@ -161,26 +166,29 @@ if (!class_exists('OpenCV\Image')) {
          */
         public function dilate($count)
         {
+            return $count ? null : null;
         }
 
         /**
-         * @param $coef1
-         * @param $coef2
-         * @param $coef3
+         * @param integer $coef1
+         * @param integer $coef2
+         * @param integer $coef3
          * @return $this
          */
         public function sobel($coef1, $coef2, $coef3)
         {
+            return ($coef1 + $coef2 + $coef3) ? null : null;
         }
 
         /**
-         * @param $coef1
-         * @param $coef2
-         * @param $coef3
+         * @param integer $lowErrRate
+         * @param integer $goodLocalization
+         * @param integer $minimalResponse
          * @return $this
          */
-        public function canny($coef1, $coef2, $coef3)
+        public function canny($lowErrRate, $goodLocalization, $minimalResponse)
         {
+            return ($lowErrRate + $goodLocalization + $minimalResponse) ? null : null;
         }
 
         /**
@@ -189,6 +197,7 @@ if (!class_exists('OpenCV\Image')) {
          */
         public function haarDetectObjects($haarCascadeFilename)
         {
+            return array($haarCascadeFilename);
         }
 
         /**
@@ -199,6 +208,16 @@ if (!class_exists('OpenCV\Image')) {
          */
         public function rectangle($x, $y, $w, $h)
         {
+        }
+
+        /**
+         * @param Image $imgOrigin
+         * @param Image $imgTemplate
+         * @return $this
+         */
+        public function matchTemplate($imgOrigin, $imgTemplate)
+        {
+            return sprintf('%s %s', $imgOrigin, $imgTemplate) ? null : null;
         }
     }
 }
@@ -215,6 +234,7 @@ if (!class_exists('OpenCV\Histogram')) {
          */
         public function calc($plane)
         {
+            return $plane ? null : null;
         }
     }
 }

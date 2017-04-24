@@ -12,22 +12,25 @@ use OpenCV\Image as Image;
 use OpenCV\Histogram as Histogram;
 
 //$i = Image::load(__DIR__ . '/../sample/party.jpg', Image::LOAD_IMAGE_COLOR);
-$i = Image::load(__DIR__ . '/../sample/party_grayscale.jpg', Image::LOAD_IMAGE_GRAYSCALE);
-$i->save(__DIR__ . '/../output/party_grayscale.jpg');
+$i = Image::load(__DIR__ . '/../sample/face5.jpg', Image::LOAD_IMAGE_COLOR);
+$i->save(__DIR__ . '/../output/grayscale.jpg');
 
 $dst = $i->sobel(1, 0, 1);
 $dst->save(__DIR__ . '/../output/test_sobel.jpg');
 
-$dst2 = $i->canny(10, 50, 3);
+//$dst2 = $i->canny(10, 50, 3);
+//$dst2 = $i->canny(30, 60, 3);
+$dst2 = $i->canny(40, 80, 3);
 $dst2->save(__DIR__ . '/../output/test_canny.jpg');
 
 ?>
 
-<img src="/output/party_grayscale.jpg" height="800"/><br/>
+<img src="/output/grayscale.jpg" height="800"/><br/>
 <img src="/output/test_sobel.jpg" height="800"/><br/>
 <img src="/output/test_canny.jpg" height="800"/><br/>
 
 <?php
+die;
 
 /* Load the sample image */
 $i = Image::load(__DIR__ . '/../output/test_sobel.jpg', Image::LOAD_IMAGE_COLOR);

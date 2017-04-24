@@ -38,16 +38,20 @@ use \OpenCV\Image;
 //echo '</pre>';
 
 
-//echo '<pre>';
+echo '<pre>';
 //print_r(get_class_methods('OpenCV\Exception'));
-//print_r(get_class_methods('OpenCV\Mat'));
-//print_r(get_class_methods('OpenCV\Image'));
+print_r(get_class_methods('OpenCV\Mat'));
+print_r(get_class_methods('OpenCV\Image'));
 //print_r(get_class_methods('OpenCV\Histogram'));
 //print_r(get_class_methods('OpenCV\Capture'));
-//echo '</pre>';
+echo '</pre>';
 
 $oClass = new ReflectionClass('OpenCV\Histogram');
 echo '<pre>';
 print_r($oClass->getConstants());
+echo '</pre>';
+
+echo '<pre>';
+print_r(get_defined_functions());
 echo '</pre>';
 ?>
